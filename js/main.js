@@ -13,13 +13,13 @@ var listamine = [];
 
 console.log(listamine.length);
 var i= 0;
-var numTmp;
+var numGenerato;
 
 while (listamine.length < 16) { //finchè il mio array non arriva a 16 tu continua a popolarlo
-  numTmp = numRandom(1,100); //generami numeri casuali da 1 a 100 alla volta
+  numGenerato = numRandom(1,100); //generami numeri casuali da 1 a 100 alla volta
 
-  if (listamine.includes(numTmp) == false) { //se il numero è già presente dimmelo
-    listamine.push(numTmp); //pusha il numero nell'array
+  if (listamine.includes(numGenerato) == false) { //se il numero è già presente dimmelo
+    listamine.push(numGenerato); //pusha il numero nell'array
   }
 
 }
@@ -27,11 +27,11 @@ while (listamine.length < 16) { //finchè il mio array non arriva a 16 tu contin
 console.log(listamine);
 
 //chiedo all'utente di inserire una lista di numeri mai uguali da 1 a 100 alla volta
-var j = 0;
+
 var mossa = false;
 var punteggio = 0;
 var numInseriti = [];
-while (j <= 84 && mossa == false) {
+while (punteggio <= 84 && mossa == false) {
   var user = parseInt(prompt("inserisci un numero da 1 a 100 sperando non sia una mina"));
 
   var verifica= presente(user, numInseriti);
@@ -49,7 +49,6 @@ while (j <= 84 && mossa == false) {
     punteggio +=1;
   }
 
-  j++;
 }
 console.log("Il tuo punteggio è: ",punteggio);
 
