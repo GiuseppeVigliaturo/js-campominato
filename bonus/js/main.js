@@ -84,7 +84,7 @@ if (scelta ===1) {
 
 
   while (punteggio <= 64 && mossa == false) {
-    var user = parseInt(prompt("inserisci un numero da 1 a 100 sperando non sia una mina"));
+    var user = parseInt(prompt("inserisci un numero da 1 a 80 sperando non sia una mina"));
   //controllo se il numero inserito è una mina
     mossa = presente (user, listamine);
 
@@ -95,8 +95,8 @@ if (scelta ===1) {
         var verifica= presente(user, numInseriti);
         if (verifica == true) {
          console.log("hai già inserito il numero: ",user);
-       }else if (user > 100 ) {
-         alert("non puoi inserire numeri superiori a 100 so dove abiti");
+       }else if (user > 80 ) {
+         alert("non puoi inserire numeri superiori a 80 so dove abiti");
        }else if (isNaN(user) === true) {
          alert("devi inserire un numero non fare il furbo o ti spezzo le gambe");
 
@@ -130,7 +130,7 @@ if (scelta === 2) {
 
 
   while (punteggio <= 34 && mossa == false) {
-    var user = parseInt(prompt("inserisci un numero da 1 a 100 sperando non sia una mina"));
+    var user = parseInt(prompt("inserisci un numero da 1 a 50 sperando non sia una mina"));
   //controllo se il numero inserito è una mina
     mossa = presente (user, listamine);
 
@@ -141,8 +141,8 @@ if (scelta === 2) {
         var verifica= presente(user, numInseriti);
         if (verifica == true) {
          console.log("hai già inserito il numero: ",user);
-       }else if (user > 100 ) {
-         alert("non puoi inserire numeri superiori a 100 so dove abiti");
+       }else if (user > 50 ) {
+         alert("non puoi inserire numeri superiori a 50 so dove abiti");
        }else if (isNaN(user) === true) {
          alert("devi inserire un numero non fare il furbo o ti spezzo le gambe");
 
