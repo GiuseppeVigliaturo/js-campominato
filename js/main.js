@@ -26,32 +26,39 @@ while (listamine.length < 16) { //finchè il mio array non arriva a 16 tu contin
 
 console.log(listamine);
 
-//chiedo all'utente di inserire una lista di numeri mai uguali da 1 a 100 alla volta
+//chiedo all'utente di inserire una lista di numeri mai uguali da 1 a 100 uno alla volta
 
 var mossa = false;
 var punteggio = 0;
 var numInseriti = [];
 while (punteggio <= 84 && mossa == false) {
   var user = parseInt(prompt("inserisci un numero da 1 a 100 sperando non sia una mina"));
-
-  var verifica= presente(user, numInseriti);
-  if (verifica == true) {
-   console.log("hai già inserito il numero: ",user);
- }else {
-   numInseriti.push(user);
- }
-
+//controllo se il numero inserito è una mina
   mossa = presente (user, listamine);
 
   if (mossa == true) {
-    alert("gioco terminato hai perso")
+    alert("gioco terminato hai perso");
   }else {
-    punteggio +=1;
+    //controllo se il numero inserito è già stato inserito altrimenti lo inserisco
+      var verifica= presente(user, numInseriti);
+      if (verifica == true) {
+       console.log("hai già inserito il numero: ",user);
+     }else if (user > 100 ) {
+       alert("non puoi inserire numeri superiori a 100 so dove abiti");
+     }else if (isNaN(user) === true) {
+       alert("devi inserire un numero non fare il furbo o ti spezzo le gambe");
+
+     }
+
+     else {
+       numInseriti.push(user);
+       punteggio +=1;
+     }
   }
 
 }
 console.log("Il tuo punteggio è: ",punteggio);
-
+console.log(numInseriti);
 
 //funzioni
 function numRandom(min, max) {
