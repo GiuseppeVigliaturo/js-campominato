@@ -17,58 +17,27 @@ var punteggio = 0;
 var numInseriti = [];
 var i= 0;
 var numGenerato;
+var maxRandom;
+var punteggioMax;
 
 if (scelta ===0) {
-  alert("hai scelto difficoltà facile");
-  while (listamine.length < 16) { //finchè il mio array non arriva a 16 tu continua a popolarlo
-    numGenerato = numRandom(1,100); //generami numeri casuali da 1 a 100 alla volta
-
-    if (listamine.includes(numGenerato) == false) { //se il numero è già presente dimmelo
-      listamine.push(numGenerato); //pusha il numero nell'array
-    }
-
-  }
-
-  console.log(listamine);
-
-
-
-  //chiedo all'utente di inserire una lista di numeri mai uguali da 1 a 100 uno alla volta
-
-
-  while (punteggio <= 84 && mossa == false) {
-    var user = parseInt(prompt("inserisci un numero da 1 a 100 sperando non sia una mina"));
-  //controllo se il numero inserito è una mina
-    mossa = presente (user, listamine);
-
-    if (mossa == true) {
-      alert("gioco terminato hai perso");
-    }else {
-      //controllo se il numero inserito è già stato inserito altrimenti lo inserisco
-        var verifica= presente(user, numInseriti);
-        if (verifica == true) {
-         console.log("hai già inserito il numero: ",user);
-       }else if (user > 100 ) {
-         alert("non puoi inserire numeri superiori a 100 so dove abiti");
-       }else if (isNaN(user) === true) {
-         alert("devi inserire un numero non fare il furbo o ti spezzo le gambe");
-
-       }
-
-       else {
-         numInseriti.push(user);
-         punteggio +=1;
-       }
-    }
-
-  }
+  alert("hai scelto difficoltà facile numeri fino a 100");
+  maxRandom = 100;
+  punteggioMax = 84;
 }
-
-
 if (scelta ===1) {
   alert("hai scelto difficoltà media numeri fino a 80");
+  maxRandom = 80;
+  punteggioMax = 64;
+}
+if (scelta ===2) {
+  alert("hai scelto difficoltà difficile numeri fino a 50");
+  maxRandom = 50;
+  punteggioMax = 34;
+}
+
   while (listamine.length < 16) { //finchè il mio array non arriva a 16 tu continua a popolarlo
-    numGenerato = numRandom(1,80); //generami numeri casuali da 1 a 100 alla volta
+    numGenerato = numRandom(1,maxRandom); //generami numeri casuali da 1 a 100 alla volta
 
     if (listamine.includes(numGenerato) == false) { //se il numero è già presente dimmelo
       listamine.push(numGenerato); //pusha il numero nell'array
@@ -79,12 +48,10 @@ if (scelta ===1) {
   console.log(listamine);
 
 
-
   //chiedo all'utente di inserire una lista di numeri mai uguali da 1 a 100 uno alla volta
 
-
-  while (punteggio <= 64 && mossa == false) {
-    var user = parseInt(prompt("inserisci un numero da 1 a 80 sperando non sia una mina"));
+  while (punteggio <= punteggioMax && mossa == false) {
+    var user = parseInt(prompt("inserisci un numero da 1 a " + maxRandom + " sperando non sia una mina"));
   //controllo se il numero inserito è una mina
     mossa = presente (user, listamine);
 
@@ -95,8 +62,8 @@ if (scelta ===1) {
         var verifica= presente(user, numInseriti);
         if (verifica == true) {
          console.log("hai già inserito il numero: ",user);
-       }else if (user > 80 ) {
-         alert("non puoi inserire numeri superiori a 80 so dove abiti");
+       }else if (user > maxRandom) {
+         alert("non puoi inserire numeri superiori a " + maxRandom + " so dove abiti");
        }else if (isNaN(user) === true) {
          alert("devi inserire un numero non fare il furbo o ti spezzo le gambe");
 
@@ -109,53 +76,8 @@ if (scelta ===1) {
     }
 
   }
-}
-
-if (scelta === 2) {
-    alert("hai scelto difficoltà media numeri fino a 50");
-  while (listamine.length < 16) { //finchè il mio array non arriva a 16 tu continua a popolarlo
-    numGenerato = numRandom(1,50); //generami numeri casuali da 1 a 100 alla volta
-
-    if (listamine.includes(numGenerato) == false) { //se il numero è già presente dimmelo
-      listamine.push(numGenerato); //pusha il numero nell'array
-    }
-
-  }
-
-  console.log(listamine);
 
 
-
-  //chiedo all'utente di inserire una lista di numeri mai uguali da 1 a 100 uno alla volta
-
-
-  while (punteggio <= 34 && mossa == false) {
-    var user = parseInt(prompt("inserisci un numero da 1 a 50 sperando non sia una mina"));
-  //controllo se il numero inserito è una mina
-    mossa = presente (user, listamine);
-
-    if (mossa == true) {
-      alert("gioco terminato hai perso");
-    }else {
-      //controllo se il numero inserito è già stato inserito altrimenti lo inserisco
-        var verifica= presente(user, numInseriti);
-        if (verifica == true) {
-         console.log("hai già inserito il numero: ",user);
-       }else if (user > 50 ) {
-         alert("non puoi inserire numeri superiori a 50 so dove abiti");
-       }else if (isNaN(user) === true) {
-         alert("devi inserire un numero non fare il furbo o ti spezzo le gambe");
-
-       }
-
-       else {
-         numInseriti.push(user);
-         punteggio +=1;
-       }
-    }
-
-  }
-}
 
 console.log("Il tuo punteggio è: ",punteggio);
 console.log(numInseriti);
