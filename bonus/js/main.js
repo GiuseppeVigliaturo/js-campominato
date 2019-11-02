@@ -20,21 +20,27 @@ var numGenerato;
 var maxRandom;
 var punteggioMax;
 
-if (scelta ===0) {
-  alert("hai scelto difficoltà facile numeri fino a 100");
-  maxRandom = 100;
-  punteggioMax = 84;
-}
-if (scelta ===1) {
-  alert("hai scelto difficoltà media numeri fino a 80");
-  maxRandom = 80;
-  punteggioMax = 64;
-}
-if (scelta ===2) {
-  alert("hai scelto difficoltà difficile numeri fino a 50");
-  maxRandom = 50;
-  punteggioMax = 34;
-}
+
+  if (scelta ===0) {
+    alert("hai scelto difficoltà facile numeri fino a 100");
+    maxRandom = 100;
+    punteggioMax = 84;
+  }
+  else if (scelta ===1) {
+    alert("hai scelto difficoltà media numeri fino a 80");
+    maxRandom = 80;
+    punteggioMax = 64;
+  }
+  else if (scelta ===2) {
+    alert("hai scelto difficoltà difficile numeri fino a 50");
+    maxRandom = 50;
+    punteggioMax = 34;
+  }
+  else {
+  alert("non hai scelto un valore valido non puoi giocare");
+  }
+
+
 
   while (listamine.length < 16) { //finchè il mio array non arriva a 16 tu continua a popolarlo
     numGenerato = numRandom(1,maxRandom); //generami numeri casuali da 1 a 100 alla volta
