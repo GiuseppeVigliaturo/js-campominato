@@ -19,27 +19,33 @@ var i= 0;
 var numGenerato;
 var maxRandom;
 var punteggioMax;
+var vai= false;
 
-
-  if (scelta ===0) {
-    alert("hai scelto difficoltà facile numeri fino a 100");
-    maxRandom = 100;
-    punteggioMax = 84;
-  }
-  else if (scelta ===1) {
-    alert("hai scelto difficoltà media numeri fino a 80");
-    maxRandom = 80;
-    punteggioMax = 64;
-  }
-  else if (scelta ===2) {
-    alert("hai scelto difficoltà difficile numeri fino a 50");
-    maxRandom = 50;
-    punteggioMax = 34;
-  }
-  else {
-  alert("non hai scelto un valore valido non puoi giocare");
-  }
-
+ while (vai==false) {
+//scelgo la difficoltà
+var scelta = parseInt(prompt("scegli tra la modalità: facile=0, medio=1 e difficile=2"));
+if (scelta ===0) {
+  alert("hai scelto difficoltà facile numeri fino a 100");
+  maxRandom = 100;
+  punteggioMax = 84;
+  vai= true;
+}
+else if (scelta ===1) {
+  alert("hai scelto difficoltà media numeri fino a 80");
+  maxRandom = 80;
+  punteggioMax = 64;
+  vai= true;
+}
+else if (scelta ===2) {
+  alert("hai scelto difficoltà difficile numeri fino a 50");
+  maxRandom = 50;
+  punteggioMax = 34;
+  vai= true;
+}
+else {
+alert("non hai scelto un valore valido non puoi giocare");
+}
+ }
 
 
   while (listamine.length < 16) { //finchè il mio array non arriva a 16 tu continua a popolarlo
